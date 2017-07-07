@@ -23,9 +23,31 @@ namespace Cwg_Exercise
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/animate.css",
+                      "~/Content/base.css",
+                      "~/Content/camera.css",
+                      "~/Content/icons.css",
+                      "~/Content/responsive.css",
+                      "~/Content/ss-gizmo.css",
+                      "~/Content/style.css",
+                      "~/Content/switcher.css",
+                      "~/Content/colors/grayblue.css",
+                      "~/scripts/rs-plugin/css/settings.css"));
+            bundles.Add(new StyleBundle("~/Cwg_Exercise/css").Include(
+                      "~/css/animate.css",
+                      "~/css/base.css",
+                      "~/css/camera.css",
+                      "~/css/icons.css",
+                      "~/css/responsive.css",
+                      "~/css/ss-gizmo.css",
+                      "~/css/style.css",
+                      "~/css/switcher.css",
+                      "~/css/colors/grayblue.css",
+                      "~/scripts/rs-plugin/css/settings.css"));
         }
     }
 }

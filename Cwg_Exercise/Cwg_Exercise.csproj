@@ -223,6 +223,8 @@
     <Content Include="Areas\Admin\Views\Dashboard\ViewApproved.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\ViewPending.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\ViewRejected.cshtml" />
+    <None Include="Properties\PublishProfiles\cwgbasicexercise - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\cwgbasicexercise - Web Deploy.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\camera-script.js" />
     <Content Include="scripts\camera.js" />
