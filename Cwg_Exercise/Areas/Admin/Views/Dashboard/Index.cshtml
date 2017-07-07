@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Cwg_Exercise.Models.CustomerAccountApplication>
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<div style="margin-top:60px">
+    <h2>Account Opening Applications</h2>
+    <p>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.customerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.accountType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.applicationStatus)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.confirmPassword)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.phoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.accountType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.applicationStatus)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.confirmPassword)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Approve", "ApproveApplication", new { id = item.id }) |
+                    @Html.ActionLink("Reject", "RejectApplication", new { id = item.id }) |
+                    @Html.ActionLink("Pend", "PendApplication", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+<div>
+   
+    @{ 
+        Cwg_Exercise.Business_Logic.Concrete.Admin_Implementation aImp = new Cwg_Exercise.Business_Logic.Concrete.Admin_Implementation();
+        var count = aImp.ViewAllCustomersApplications().Count();
+    }
+    <h4>Total Number of Applications: @count</h4>
+</div>
+<div>@Html.ActionLink("View Approved Applications ", "ViewApproved") |
+@Html.ActionLink(" View Rejected Applications", "ViewRejected") |
+@Html.ActionLink(" View Pending Applications", "ViewPending")</div>
+
+

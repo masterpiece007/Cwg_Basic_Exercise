@@ -1,0 +1,90 @@
+﻿
+<div id="content-wrapper">
+
+    
+    <div id="landing_banner">
+        <div class="bg_landing_banner"></div>
+        <div class="container">
+            <div class="eight columns">
+                <hr class="sep100">
+                <h1 data-animated="fadeInUp" class="animated fadeInUp">Welcome To CWG Banking Application.</h1>
+                <p data-animated="fadeInUp" class="animated fadeInUp"> You Can Open New Account Or Check Your Application Status </p>
+                <a href="@Url.Action("OpenNewBankAccount","Customer")" class="button white animated fadeInUp" data-animated="fadeInUp"><i class="ss-openfolder"></i> Open New Account ›</a> <a href="@Url.Action("CheckApplicationStatus","Customer",new { customerEmail= User.Identity.Name })" class="button color animated fadeInUp" data-animated="fadeInUp"><i class="ss-checkfile"></i> Check Application Status ›</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-tagline">
+        <div class="container">
+            <div class="twelve columns">
+                <h3>@ViewBag.applicationmessage</h3>
+                <p></p>
+            </div>
+            <div class="four columns centered"> <a href="@Url.Action("CheckApplicationStatus","Customer",new { customerEmail= User.Identity.Name })" class="button line-color" style="position: relative;
+    top: -9px;
+    color: white;">Check Application Status!</a> </div>
+        </div>
+    </div>
+    
+    
+    @{ 
+        var admin = new Cwg_Exercise.Business_Logic.Concrete.Admin_Implementation();
+        var approvedApplicationsCount = admin.ViewSpecificApplications("approved").Count();
+        var pendingApplicationsCount = admin.ViewSpecificApplications("pending").Count();
+        var rejectedApplicationCount = admin.ViewSpecificApplications("rejected").Count();
+    }
+    <div class="container" style="padding-left:50px;">
+        <hr class="sep20">
+        <div class="three columns animated bounceInUp" data-animated="bounceInUp">
+            <div class="stats">
+                <div class="num" data-content="@approvedApplicationsCount" data-num="800">10342</div>
+                <div class="type">Approved Applications</div>
+            </div>
+
+        </div>
+
+       <div class="three columns animated bounceInDown" data-animated="bounceInDown">
+            <div class="stats">
+     
+    </div>
+
+    </div>
+
+        <div class="three columns animated bounceInUp" data-animated="bounceInUp">
+            <div class="stats">
+                <div class="num" data-content="@pendingApplicationsCount" data-num="900"></div>
+                <div class="type">Pending Applications</div>
+            </div>
+
+        </div>
+
+        <div class="three columns animated bounceInDown" data-animated="bounceInDown">
+           <div class="stats">
+      
+    </div>
+
+    </div>
+
+        <div class="three columns animated bounceInUp" data-animated="bounceInUp">
+            <div class="stats last">
+                <div class="num" data-content="@rejectedApplicationCount" data-num="700"></div>
+                <div class="type">Rejected Applications</div>
+            </div>
+
+        </div>
+
+        <hr class="sep20">
+    </div>
+
+
+    <div class="container">
+        <div class="sixteen columns main-headline">
+            <h3>Ready to Enjoy!</h3>
+            <p></p>
+            <hr class="sep20">
+        </div>
+        <div class="sixteen columns button-group centered"> <a href="@Url.Action("OpenNewBankAccount","Customer")" class="button gray animated fadeInLeft" data-animated="fadeInLeft"><span class="title">Open New Account</span><span class="subtitle">its very easy</span></a> <span class="or">or</span> <a href="@Url.Action("CheckApplicationStatus","Customer",new { customerEmail= User.Identity.Name })" class="button color animated fadeInRight" data-animated="fadeInRight"><span class="title">Check Application Status</span><span class="subtitle">get your account no quickly</span></a> </div>
+    </div>
+
+    </div>

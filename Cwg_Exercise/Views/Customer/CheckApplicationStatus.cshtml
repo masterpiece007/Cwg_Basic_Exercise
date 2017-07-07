@@ -1,0 +1,135 @@
+﻿@model Cwg_Exercise.Models.CustomerAccountApplication
+
+@*<div>
+    <h4>CustomerAccountApplication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.accountType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accountType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.applicationStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.applicationStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.confirmPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.confirmPassword)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+
+
+<div id="content-wrapper">
+
+   
+    <div id="parallex-inner" class="parallex">
+        <div class="container">
+            <div class="eight columns animated fadeInUp" data-animated="fadeInUp">
+                <h1>Application Status</h1>
+                <p></p>
+            </div>
+            <div class="eight columns">
+                <nav id="breadcrumbs">
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+   
+    <div class="container animated fadeInDown" data-animated="fadeInDown">
+        <dl class="dl-horizontal">
+            <h2>
+                @Html.DisplayNameFor(model => model.customerName):
+            </h2>
+            <h1>
+                @Html.DisplayFor(model => model.customerName)
+            </h1>
+
+            <h2>
+                @Html.DisplayNameFor(model => model.accountType):
+            </h2>
+            <h1>
+                @Html.DisplayFor(model => model.accountType)
+            </h1>
+
+            <h2>
+                @Html.DisplayNameFor(model => model.applicationStatus):
+            </h2>
+            <h1>
+                @Html.DisplayFor(model => model.applicationStatus)
+               
+            </h1>
+
+            <h2>
+                @Html.DisplayNameFor(model => model.accountNumber)
+            </h2>
+            <h1>
+                @Html.Partial("_displayAccountNumPatial")
+            </h1>
+        </dl>
+</div>
+   
+
+    <hr class="sep50">
+
+
+</div>

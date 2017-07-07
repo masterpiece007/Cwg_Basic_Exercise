@@ -1,0 +1,98 @@
+﻿@model Cwg_Exercise.Models.CustomerAccountApplication
+
+
+<div id="content-wrapper">
+
+   
+    <div id="parallex-inner" class="parallex">
+        <div class="container">
+            <div class="eight columns animated fadeInUp" data-animated="fadeInUp">
+                <h1>Account Opening Form</h1>
+            </div>
+            <div class="eight columns">
+                <nav id="breadcrumbs">
+                   
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="seven columns">
+            <h3 class="headline">Please fill this form</h3>
+            <span class="brd-headling"></span>
+            <div class="clearfix"></div>
+           
+            <section id="contact">
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div>
+                        <fieldset>
+                           
+                            <div>
+                                @Html.LabelFor(model => model.customerName)
+                                <div>
+                                    @Html.EditorFor(model => model.customerName, new { htmlAttributes = new { @class = "form-control", @style = "width:96%;" } })
+                                    @Html.ValidationMessageFor(model => model.customerName, "", new { @class = "validation-errors" })
+                                </div>
+                            </div>
+
+                            <div>
+                                @Html.LabelFor(model => model.phoneNumber)
+                                <div>
+                                    @Html.EditorFor(model => model.phoneNumber, new { htmlAttributes = new { @class = "form-control", @style = "width:96%;" } })
+                                    @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "validation-errors" })
+                                </div>
+                            </div>
+
+                            <div>
+                                @Html.LabelFor(model => model.address)
+                                <div>
+                                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", @style = "width:96%;" } })
+                                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "validation-errors" })
+                                </div>
+                            </div>
+
+
+                            <div>
+                                @Html.LabelFor(model => model.accountType)
+                                <div>
+                                  
+                                    <select name="accountType" style="width:96%">
+                                        <option value="current">current</option>
+                                        <option value="savings">savings</option>
+                                    </select>
+
+                                    @Html.ValidationMessageFor(model => model.accountType, "", new { @class = "validation-errors" })
+                                </div>
+                            </div>
+
+
+                        </fieldset>
+                        <div>
+                            <div>
+                                <input type="submit" value="Create Account" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </section>
+          
+        </div>
+        <div class="nine columns right">
+
+        </div>
+    </div>
+    <hr class="sep50">
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

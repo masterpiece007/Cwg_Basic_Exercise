@@ -1,0 +1,12 @@
+﻿@model Cwg_Exercise.Models.CustomerAccountApplication
+
+@{ 
+    if (Model.applicationStatus != "pending")
+    {
+        <p style="color:blueviolet">@Model.accountNumber</p>
+    }
+    else
+    {
+        <p style="color:red">visible upon application approval</p>
+    }
+}
