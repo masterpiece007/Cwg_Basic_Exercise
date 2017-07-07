@@ -1,70 +1,19 @@
-﻿@*<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>*@
-
+﻿
 
 
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
+
 <html lang="en">
-<!--<![endif]-->
-<!-- Mirrored from okathemes.com/themes/evolve/index-parallex.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Sep 2016 08:29:21 GMT -->
+
 <head>
-    <!-- Basic Page Needs
-    ================================================== -->
+   
     <meta charset="utf-8">
     <title>Evolve - Responsive Multi-purpose HTML Theme</title>
-    <!-- Favicon
-        ============================================== -->
+    
     <link rel="icon" href="images/evolve.ico">
-    <!-- Mobile Specific
-    ================================================== -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- CSS
-    ================================================== -->
-    @*@Styles.Render("~/Fashionista/css")*@
+    
 
     <link rel="stylesheet" type="text/css" href="~/scripts/rs-plugin/css/settings.css">
     <link rel="stylesheet" type="text/css" href="~/css/colors/grayblue.css" id="colors">
@@ -74,16 +23,10 @@
     <link rel="stylesheet" type="text/css" href="~/css/camera.css" id='camera-css'>
     <link rel="stylesheet" type="text/css" href="~/css/switcher.css">
 
-    <!--[if lt IE 9]>
-        <script src="../../../html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!-- Java Script
-    ================================================== -->
+   
 </head>
 <body>
-    @*<div class="loader"><div class="ring"><div class="spin"></div></div></div>*@
-    <!-- Header
-    ================================================== -->
+   
     <header id="header">
         <div class="topbar">
             <div class="container">
@@ -100,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu & Search -->
+        
         <div class="container">
             <div class="three columns">
                 <div id="mobile-navigation">
@@ -108,52 +51,43 @@
                         <input type="text" value="Start Typing..." onFocus="if (this.value == 'Start Typing...')this.value = '';" onBlur="if (this.value == '')this.value = 'Start Typing...';" />
                     </form>
                     <a href="#menu" class="menu-trigger"><i class="icon-reorder"></i></a>
-                     @*<span class="search-trigger"><i class="icon-search"></i></span>*@
+                    
                 </div>
                 <div id="logo">
                     <h1><a href="index.html"><img src="~/images/logo.png" alt="Evolve" /></a></h1>
                 </div>
             </div>
-            <!-- Navigation
-            ================================================== -->
+           
             <div class="thirteen columns">
                 <nav id="navigation" class="menu">
                     <ul id="responsive">
                        
                         <li>
                             @Html.ActionLink("Home", "index", "Home")
-                            @*<a href="#">What We Do</a>*@
-                            <!-- Mega Menu / Start -->
-                            <!-- Mega Menu / End -->
+                           
                         </li>
                         <li>
                             @Html.ActionLink("Open New Account", "OpenNewBankAccount", "Customer")
-                            @*<a href="#">Latest Designs</a>*@
-
+                           
                         </li>
                         <li>
 
                             @Html.ActionLink("Application Status", "CheckApplicationStatus","Customer", new { customerEmail = User.Identity.Name },null)
-                            @*<a href="#">Order Now</a>*@
+                           
 
                         </li>
                         @Html.Partial("_LoginPartial")
                         <li>
                             
-                            @*<a href="#">Testimonies</a>*@
+                            
 
                         </li>
-                        @*<li><a href="contact.html"></a></li>*@
-                        <!-- Search Button -->
-                        @*<li>
-                            <div id="header-search-button"><a href="#" class="search-button"><i class="ss-search"></i></a></div>
-                        </li>*@
+                       
                     </ul>
                 </nav>
             </div>
         </div>
-        <!-- Container / End -->
-        <!-- Search Form Container -->
+       
         <section id="header-search-panel">
             <div class="container">
                 <div class="search">
@@ -161,7 +95,7 @@
                         <form action="#" id="header-search-form" method="get">
                             <a class="close-search" href="#"><i class="ss-delete"></i></a>
                             <input type="text" id="header-search" name="s" value="Start Typing..." autocomplete="off" onFocus="if (this.value == 'Start Typing...')this.value = '';" onBlur="if (this.value == '')this.value = 'Start Typing...';" />
-                            <!-- Create a fake search button -->
+                           
                             <span class="fake-submit-button">
                                 <input type="submit" name="submit" value="submit" />
                             </span>
@@ -171,15 +105,11 @@
             </div>
         </section>
     </header>
-    <!-- Header / End -->
-    <!-- Content Wrapper
-    ================================================== -->
+   
     @RenderBody()
-    <!-- Content Wrapper / End -->
-    <!-- Footer
-    ================================================== -->
+   
     <div id="footer">
-        <!-- Container -->
+       
         <div class="container">
             <div class="four columns">
                 <h3>About</h3>
@@ -204,19 +134,17 @@
             
             
         </div>
-        <!-- Container / End -->
+        
     </div>
-    <!-- Footer / End -->
-    <!-- Footer Bottom / Start -->
+    
     <div id="footer-bottom">
-        <!-- Container -->
+       
         <div class="container">
             
         </div>
-        <!-- Container / End -->
+        
     </div>
-    <!-- Footer Bottom / Start -->
-    @*@Scripts.Render("~/Fashionista/scripts")*@
+   
 
     <script src="~/scripts/jquery.min.js"></script>
     <script src="~/scripts/jquery.themepunch.plugins.min.js"></script>
@@ -237,14 +165,13 @@
     <script src="~/scripts/parallex.js"></script>
     <script src="~/scripts/ss-gizmo.js"></script>
     <script src="~/scripts/custom.js"></script>
-    <!-- Style Switcher
-    ================================================== -->
+    
 
     <script src="~/scripts/switcher.js"></script>
-    <!-- Style Switcher / End -->
+    
     @RenderSection("scripts", required: false)
 </body>
 
-<!-- Mirrored from okathemes.com/themes/evolve/index-parallex.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Sep 2016 08:29:25 GMT -->
+
 </html>
 
